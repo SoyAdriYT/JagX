@@ -1,0 +1,181 @@
+-- Crear la GUI
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "JaguarX Sistema de Clave"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+-- Crear el marco principal
+local Frame = Instance.new("Frame")
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Frame.Position = UDim2.new(0.5, -175, 0.5, -125)
+Frame.Size = UDim2.new(0, 350, 0, 250)
+Frame.BorderSizePixel = 0
+Frame.ClipsDescendants = true
+
+-- Crear el título
+local Title = Instance.new("TextLabel")
+Title.Parent = Frame
+Title.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+Title.Position = UDim2.new(0, 0, 0, 0)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.Font = Enum.Font.GothamBold
+Title.Text = "JaguarX Sistema de Clave"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.TextSize = 20
+
+-- Crear el cuadro de texto para ingresar la clave
+local TextBox = Instance.new("TextBox")
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TextBox.Position = UDim2.new(0.1, 0, 0.3, 0)
+TextBox.Size = UDim2.new(0.8, 0, 0.2, 0)
+TextBox.Font = Enum.Font.GothamBold
+TextBox.PlaceholderText = "Ingrese la clave..."
+TextBox.TextColor3 = Color3.new(1, 1, 1)
+TextBox.TextSize = 16
+
+-- Crear el botón para verificar la clave
+local CheckButton = Instance.new("TextButton")
+CheckButton.Parent = Frame
+CheckButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+CheckButton.Position = UDim2.new(0.1, 0, 0.6, 0)
+CheckButton.Size = UDim2.new(0.8, 0, 0.15, 0)
+CheckButton.Font = Enum.Font.GothamBold
+CheckButton.Text = "Verificar Clave"
+CheckButton.TextColor3 = Color3.new(1, 1, 1)
+CheckButton.TextSize = 18
+
+-- Función para verificar la clave
+CheckButton.MouseButton1Click:Connect(function()
+    local claveIngresada = TextBox.Text
+    local claveCorrecta = "F2OpcFnPEKhNepFzUlpIRnf1mtrEeH8tHTV"
+    
+    if claveIngresada == claveCorrecta then
+        -- Esperar 2 segundos antes de ejecutar el script
+        wait(2)
+        
+        -- Ejecutar el script
+local player = game.Players.LocalPlayer
+local gui
+
+local function createGUI()
+    gui = Instance.new("ScreenGui")
+    gui.Name = "JaguarXGUI"
+    gui.Parent = player:WaitForChild("PlayerGui")
+
+    local frame = Instance.new("Frame")
+    frame.Size = UDim2.new(0, 800, 0, 500)
+    frame.Position = UDim2.new(0.5, -400, 0.5, -250)
+    frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    frame.BorderSizePixel = 0
+    frame.Active = true
+    frame.Parent = gui
+
+    local topCorner = Instance.new("UICorner")
+    topCorner.CornerRadius = UDim.new(0, 10)
+    topCorner.Parent = frame
+
+    local bottomCorner = Instance.new("UICorner")
+    bottomCorner.CornerRadius = UDim.new(0, 10)
+    bottomCorner.Parent = frame
+
+    local titleLabel = Instance.new("TextLabel")
+    titleLabel.Size = UDim2.new(1, 0, 0, 40)
+    titleLabel.Position = UDim2.new(0, 0, 0, 0)
+    titleLabel.BackgroundColor3 = Color3.fromRGB(178, 34, 34)
+    titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    titleLabel.Font = Enum.Font.GothamBold
+    titleLabel.TextSize = 24
+    titleLabel.Text = "JaguarX 1.4"
+    titleLabel.Parent = frame
+
+    local scriptBox = Instance.new("TextBox")
+    scriptBox.Size = UDim2.new(0.9, 0, 0, 200)
+    scriptBox.Position = UDim2.new(0.05, 0, 0.25, 0)  -- Se movió un poco hacia abajo
+    scriptBox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    scriptBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    scriptBox.Font = Enum.Font.Gotham
+    scriptBox.TextSize = 18
+    scriptBox.TextWrapped = true
+    scriptBox.Text = "print(\"JaguarX El líder de la explotación\")"
+    scriptBox.Parent = frame
+
+    local executeButton = Instance.new("TextButton")
+    executeButton.Size = UDim2.new(0.2, 0, 0, 40)
+    executeButton.Position = UDim2.new(0.05, 0, 0.85, 0)
+    executeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    executeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    executeButton.Font = Enum.Font.GothamBold
+    executeButton.TextSize = 18
+    executeButton.Text = "Ejecutar"
+    executeButton.Parent = frame
+
+    local clearButton = Instance.new("TextButton")
+    clearButton.Size = UDim2.new(0.2, 0, 0, 40)
+    clearButton.Position = UDim2.new(0.275, 0, 0.85, 0)
+    clearButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    clearButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    clearButton.Font = Enum.Font.GothamBold
+    clearButton.TextSize = 18
+    clearButton.Text = "Borrar"
+    clearButton.Parent = frame
+
+    local removeCheatsButton = Instance.new("TextButton")
+    removeCheatsButton.Size = UDim2.new(0.3, 0, 0, 50)
+    removeCheatsButton.Position = UDim2.new(0.55, 0, 0.85, 0)
+    removeCheatsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    removeCheatsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    removeCheatsButton.Font = Enum.Font.GothamBold
+    removeCheatsButton.TextSize = 18
+    removeCheatsButton.Text = "Remover Anti-Trampas del juego"
+    removeCheatsButton.Parent = frame
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            local initialPosition = input.Position
+            local initialFramePosition = frame.Position
+
+            local inputChangedConnection
+            inputChangedConnection = game:GetService("UserInputService").InputChanged:Connect(function(changedInput)
+                if changedInput.UserInputType == Enum.UserInputType.MouseMovement or changedInput.UserInputType == Enum.UserInputType.Touch then
+                    local delta = changedInput.Position - initialPosition
+                    frame.Position = UDim2.new(initialFramePosition.X.Scale, initialFramePosition.X.Offset + delta.X, initialFramePosition.Y.Scale, initialFramePosition.Y.Offset + delta.Y)
+                end
+            end)
+
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    inputChangedConnection:Disconnect()
+                end
+            end)
+        end
+    end)
+
+    executeButton.MouseButton1Click:Connect(function()
+        print("┳═一JΛGЦΛЯX┳═ha ejecutado un Script exitosamente con protección contra Byfron esto hace que no sea detectado por Roblox/Anti-Trampas del juego/Moderadores/IA/Verificación del código.")
+        wait(2)
+        local script = scriptBox.Text
+        loadstring(script)()
+    end)
+
+    clearButton.MouseButton1Click:Connect(function()
+        scriptBox.Text = ""
+    end)
+
+    removeCheatsButton.MouseButton1Click:Connect(function()
+        wait(2)
+        print("┳═一JΛGЦΛЯX┳═ha removido el Anti-Trampas de Tutorial de YouTube, esto permite la ejecución de Scripts que están restringidos y bloquea cualquier método Anti-Trampas.")
+    end)
+end
+
+createGUI()
+
+        
+        -- Cerrar la GUI
+        ScreenGui:Destroy()
+    else
+        -- Clave incorrecta
+        warn("Clave incorrecta")
+    end
+end)
