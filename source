@@ -49,7 +49,7 @@ CheckButton.TextSize = 18
 -- Función para verificar la clave
 CheckButton.MouseButton1Click:Connect(function()
     local claveIngresada = TextBox.Text
-    local claveCorrecta = "F2OpcFnPEKhNepFzUlpIRnf1mtrEeH8tHTV"
+    local claveCorrecta = "x8nCWxg93k2IsqmlefGPuDqRWnHcF5lLhmSKeTJIgt"
     
     if claveIngresada == claveCorrecta then
         -- Esperar 2 segundos antes de ejecutar el script
